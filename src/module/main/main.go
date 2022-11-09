@@ -22,6 +22,10 @@ func main() {
 	//	close(ch)
 	//}
 	wg.Wait()
+	_, flag := <-ch
+	if flag {
+		close(ch)
+	}
 
 	fmt.Println("饭店打样！")
 
